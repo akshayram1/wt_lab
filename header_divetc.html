@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-content,
+        .middle-content,
+        .right-content {
+            flex: 1;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .left-content {
+            background-color: #f2f2f2;
+        }
+
+        .middle-content {
+            background-color: #e6e6e6;
+        }
+
+        .right-content {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Website Header</h1>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <div class="left-content">
+                <h2>Left Content</h2>
+                <p>This is the left side content.</p>
+            </div>
+
+            <div class="middle-content">
+                <h2>Middle Content</h2>
+                <p>This is the middle content.</p>
+            </div>
+
+            <div class="right-content">
+                <h2>Right Content</h2>
+                <p>This is the right side content.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

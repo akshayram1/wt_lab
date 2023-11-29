@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable Chessboard</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #chessboard {
+            display: grid;
+            width: 80vmin;
+            /* Initial width as 80% of the viewport minimum dimension */
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        .square {
+            width: 100%;
+            padding-bottom: 100%;
+            /* Maintain a 1:1 aspect ratio for each square */
+            border: 1px solid #ccc;
+        }
+
+        .even {
+            background-color: #eee;
+        }
+
+        .odd {
+            background-color: #444;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chessboard"></div>
+
+    <script>
+        function createChessboard() {
+            const chessboard = document.getElementById('chessboard');
+            chessboard.innerHTML = '';
+
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const square = document.createElement('div');
+                    square.classList.add('square', (row + col) % 2 === 0 ? 'even' : 'odd');
+                    chessboard.appendChild(square);
+                }
+            }
+        }
+
+        // Initial chessboard creation
+        createChessboard();
+
+        // Add event listener for resizing
+        window.addEventListener('resize', function () {
+            const width = document.documentElement.clientWidth;
+            const height = document.documentElement.clientHeight;
+            const minDimension = Math.min(width, height);
+            const newSize = Math.floor(minDimension / 8);
+
+            createChessboard(); // Always create an 8x8 chessboard
+            document.getElementById('chessboard').style.width = newSize * 8 + 'px';
+        });
+    </script>
+
+</body>
+
+</html>
